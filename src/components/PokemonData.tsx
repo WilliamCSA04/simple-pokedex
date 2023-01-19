@@ -11,7 +11,13 @@ export function PokemonData() {
 
     function changeHistory(data?: Pokemon) {
         if(data) {
-            setHistory((prev) => [ data, ...prev ])
+            
+            setHistory((prev) => {
+                if(prev[0]?.name !== data.name) {
+                    return [ data, ...prev ]
+                }
+                return prev
+            })
         }
     }
 

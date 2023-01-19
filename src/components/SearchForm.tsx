@@ -9,7 +9,8 @@ export function SearchForm({ changeHistory, changeCurrent }: SerachFormProps) {
     return (
         <form onSubmit={async (e) => {
             e.preventDefault();
-            const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${e.currentTarget.search.value.toLowerCase()}`)
+            const pokemonName = e.currentTarget.search.value.toLowerCase()
+            const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
             const poke = await data.json();
             if(poke) {
                 changeHistory(poke)
