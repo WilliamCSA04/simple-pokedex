@@ -4,7 +4,9 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Simple Pokedex">
 	<main class="bg-gray-900 h-screen text-gray-50">
-		<h1>Simple Pokedex</h1>
-		<PokemonData client:load />
+		<div class="p-12">
+			<h1 class="text-center font-black text-2xl mb-16">Simple Pokedex</h1>
+			<PokemonData client:load />
+		</div>
 	</main>
 </Layout>
